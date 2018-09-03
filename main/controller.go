@@ -13,8 +13,7 @@ func NowController(w http.ResponseWriter, r *http.Request) {
 }
 
 func ToShrekController(w http.ResponseWriter, r *http.Request) {
-    params := mux.Vars(r)
-    utc, err := time.Parse(time.RFC3339, params["utc"])
+    utc, err := time.Parse(time.RFC3339, mux.Vars(r)["utc"])
     if err != nil {
         writeError(w, err)
         return
@@ -30,8 +29,7 @@ func writeShrekResponse(w http.ResponseWriter, shrekStandardTime float64) {
 }
 
 func FromShrekController(w http.ResponseWriter, r *http.Request) {
-    params := mux.Vars(r)
-    sst, err := strconv.ParseFloat(params["sst"], 64)
+    sst, err := strconv.ParseFloat(mux.Vars(r)["sst"], 64)
     if err != nil {
         writeError(w, err)
         return
