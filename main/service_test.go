@@ -1,10 +1,14 @@
-package shrek
+package main
 
 import (
     "testing"
     "github.com/stretchr/testify/assert"
     "time"
 )
+
+func TestNow(t *testing.T) {
+    assert.True(t, float64(98211) < Now())
+}
 
 func TestToShrek(t *testing.T) {
     assert.Equal(t, float64(100000), ToShrek(time.Date(2018, time.December, 27, 15, 0, 0, 0, time.UTC)))
