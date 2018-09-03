@@ -47,7 +47,7 @@ func TestFromShrekControllerValidInput(t *testing.T) {
 }
 
 func TestFromShrekControllerInvalidInput(t *testing.T) {
-    responseRecorder := setupTest(t, "/api/fromShrek/invalid", FROM_SHREK_TEMPLATE, ToShrekController)
+    responseRecorder := setupTest(t, "/api/fromShrek/invalid", FROM_SHREK_TEMPLATE, FromShrekController)
     expectBadRequestResponseCode(t, responseRecorder)
 }
 
